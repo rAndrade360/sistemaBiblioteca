@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Telas;
+package views.Telas;
 
 /**
  *
@@ -70,11 +70,11 @@ public class TelaInicialMDI extends javax.swing.JFrame {
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/book.png"))); // NOI18N
         jMenu1.setText("Livro");
 
-        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/book_add.png"))); // NOI18N
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/book_add.png"))); // NOI18N
         jMenuItem2.setText("Adicionar");
         jMenu1.add(jMenuItem2);
 
-        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/book_delete.png"))); // NOI18N
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/book_delete.png"))); // NOI18N
         jMenuItem4.setText("Remover");
         jMenu1.add(jMenuItem4);
 
