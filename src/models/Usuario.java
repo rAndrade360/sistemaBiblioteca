@@ -1,44 +1,38 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package models;
 
 /**
  *
  * @author renan
  */
-public class Usuario {
-    private String nome;
-    private String matricula;
-    private int cpf;
+public class Usuario extends Pessoa {
     private String turma;
     private String endereco;
-    private int telefone;
     private int celular;
+    
 
-    public void setNome(String nome){
-        this.nome = nome;
+    public void setTurma(String turma){
+        this.turma = turma;
     }
     
-    public String getNome(){
-        return this.nome;
+    public String getTurma(){
+        return this.turma;
     }
 
-    public void setMatricula(String matricula){
-        this.matricula = matricula;
+    public void setEndereco(String endereco){
+        this.endereco = endereco;
     }
     
-    public String getMatricula(){
-        return this.matricula;
+    public String getEndereco(){
+        return this.endereco;
     }
 
-    public void setCpf(int cpf){
-        this.cpf = cpf;
+
+    public void setCelular(int celular){
+        this.celular = celular;
     }
     
-    public String getCpf(){
-        return this.cpf;
+    public int getCelular(){
+        return this.celular;
     }
 }
