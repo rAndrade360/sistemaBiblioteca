@@ -9,6 +9,7 @@ public class Usuario extends Pessoa {
     private String turma;
     private String endereco;
     private int celular;
+    private Date nascimento;
     
 
     public void setTurma(String turma){

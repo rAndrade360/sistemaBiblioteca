@@ -11,7 +11,22 @@ public class Pessoa {
     private String matricula;
     private int cpf;
     private int telefone;
+   
 
+    public Pessoa(int id, String nome, String matricula, int cpf, int telefone){
+        this.id = id;
+        this.nome = nome;
+        this.matricula = matricula,
+        this.cpf = cpf;
+        this.telefone = telefone;
+    }
+
+    public Pessoa(int id, String nome, String matricula, int cpf){
+        this.id = id;
+        this.nome = nome;
+        this.matricula = matricula,
+        this.cpf;
+    }
     
     public void setId(int id){
         this.id = id;
