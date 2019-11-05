@@ -31,11 +31,8 @@ public class Livro {
         this.ano = ano;
         this.editora = editora;
     }
-    
-    
-    
-    
-     public void setAutor(String autor){
+ 
+    public void setAutor(String autor){
         this.autor = autor;
     }
     
