@@ -1,23 +1,43 @@
 
 package models;
 
+import java.time.LocalDate;
+
+
 /**
  *
  * @author renan
  */
 public class Usuario extends Pessoa {
-    private String turma;
+    private String email;
     private String endereco;
     private int celular;
-    private Date nascimento;
-    
+    private LocalDate nascimento;
 
-    public void setTurma(String turma){
-        this.turma = turma;
+    public Usuario(int id, String nome, String matricula, int cpf, int telefone) {
+        super(id, nome, matricula, cpf, telefone);
     }
     
-    public String getTurma(){
-        return this.turma;
+     public Usuario(int id, String nome, String matricula, int cpf){
+        super(id, nome, matricula, cpf);
+    }
+
+    public Usuario(String email, String endereco, int celular, LocalDate nascimento, int id, String nome, String matricula, int cpf, int telefone) {
+        super(id, nome, matricula, cpf, telefone);
+        this.email = email;
+        this.endereco = endereco;
+        this.celular = celular;
+        this.nascimento = nascimento;
+    }
+    
+    
+
+    public void setEmail(String email){
+        this.email= email;
+    }
+    
+    public String getEmail(){
+        return this.email;
     }
 
     public void setEndereco(String endereco){
@@ -36,4 +56,13 @@ public class Usuario extends Pessoa {
     public int getCelular(){
         return this.celular;
     }
+
+    public LocalDate getNascimento() {
+        return nascimento;
+    }
+
+    public void setNascimento(LocalDate nascimento) {
+        this.nascimento = nascimento;
+    }
+    
 }

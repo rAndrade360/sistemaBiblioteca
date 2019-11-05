@@ -5,18 +5,18 @@ package models;
  *
  * @author renan
  */
-public class Pessoa {
-    private int id;
-    private String nome;
-    private String matricula;
-    private int cpf;
-    private int telefone;
+public abstract class Pessoa {
+    protected int id;
+    protected String nome;
+    protected String matricula;
+    protected int cpf;
+    protected int telefone;
    
 
     public Pessoa(int id, String nome, String matricula, int cpf, int telefone){
         this.id = id;
         this.nome = nome;
-        this.matricula = matricula,
+        this.matricula = matricula;
         this.cpf = cpf;
         this.telefone = telefone;
     }
@@ -24,15 +24,15 @@ public class Pessoa {
     public Pessoa(int id, String nome, String matricula, int cpf){
         this.id = id;
         this.nome = nome;
-        this.matricula = matricula,
-        this.cpf;
+        this.matricula = matricula;
+        this.cpf = cpf;
     }
     
     public void setId(int id){
         this.id = id;
     }
     
-    public int getNome(){
+    public String getNome(){
         return this.nome;
     }
 
@@ -40,9 +40,6 @@ public class Pessoa {
         this.nome = nome;
     }
     
-    public String getNome(){
-        return this.nome;
-    }
 
     public void setMatricula(String matricula){
         this.matricula = matricula;

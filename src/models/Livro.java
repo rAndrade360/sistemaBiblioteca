@@ -18,11 +18,22 @@ public class Livro {
         this.id = id;
         this.autor = autor;
         this.titulo = titulo;
-        this.subtitulo;
+        this.subtitulo = subtitulo;
         this.ano = ano;
         this.editora = editora;
         this.volume = volume;
     }
+
+    public Livro(int id, String autor, String titulo, int ano, String editora) {
+        this.id = id;
+        this.autor = autor;
+        this.titulo = titulo;
+        this.ano = ano;
+        this.editora = editora;
+    }
+    
+    
+    
     
      public void setAutor(String autor){
         this.autor = autor;
@@ -56,11 +67,11 @@ public class Livro {
         return this.editora;
     }
 
-    public void setVolume(String volume){
+    public void setVolume(int volume){
         this.volume = volume;
     }
     
-    public String getVolume(){
+    public int getVolume(){
         return this.volume;
     }
 
