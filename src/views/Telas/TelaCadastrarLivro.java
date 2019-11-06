@@ -99,9 +99,9 @@ public class TelaCadastrarLivro extends javax.swing.JInternalFrame {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
-                            .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane2)
-                            .addComponent(jTextField1)))
+                            .addComponent(jTextField1)
+                            .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel4)))
@@ -142,7 +142,8 @@ public class TelaCadastrarLivro extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JOptionPane.showMessageDialog(null, " Cadastrado Com Sucesso! ");
+        JOptionPane.showMessageDialog(null, " Cadastrado Realizado! ");
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
