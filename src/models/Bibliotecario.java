@@ -7,13 +7,13 @@ package models;
  */
 public class Bibliotecario extends Pessoa{
     private String senha;
-    public Bibliotecario(int id, String nome, String matricula, int cpf, int telefone, String senha){
-        super(id, nome, matricula, cpf, telefone);
+    public Bibliotecario(String nome, String matricula, String sexo,int cpf, int telefone, String senha){
+        super(nome, matricula, sexo, cpf, telefone);
         this.senha = senha;
     }
 
-    public Bibliotecario(int id, String nome, String matricula, int cpf, String senha){
-        super(id, nome, matricula, cpf);
+    public Bibliotecario( String nome, String matricula, String sexo, int cpf, String senha){
+        super(nome, matricula, sexo, cpf);
         this.senha = senha;
     }
 

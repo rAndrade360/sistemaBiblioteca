@@ -10,22 +10,22 @@ import java.time.LocalDate;
  */
 public class Usuario extends Pessoa {
     private String email;
-    private String endereco;
     private int celular;
     private LocalDate nascimento;
 
-    public Usuario(int id, String nome, String matricula, int cpf, int telefone) {
-        super(id, nome, matricula, cpf, telefone);
+    public Usuario(String nome, String sexo,String matricula, int cpf, int telefone, LocalDate nascimento) {
+        super(nome, matricula, sexo,cpf, telefone);
+        this.nascimento = nascimento;
     }
     
-     public Usuario(int id, String nome, String matricula, int cpf){
-        super(id, nome, matricula, cpf);
+     public Usuario(String nome, String matricula, String sexo,int cpf, LocalDate nascimento){
+        super(nome, matricula, sexo,cpf);
+        this.nascimento = nascimento;
     }
 
-    public Usuario(String email, String endereco, int celular, LocalDate nascimento, int id, String nome, String matricula, int cpf, int telefone) {
-        super(id, nome, matricula, cpf, telefone);
+    public Usuario(String email, int celular, String sexo,LocalDate nascimento, String nome, String matricula, int cpf, int telefone) {
+        super(nome, matricula, sexo,cpf, telefone);
         this.email = email;
-        this.endereco = endereco;
         this.celular = celular;
         this.nascimento = nascimento;
     }
@@ -40,15 +40,7 @@ public class Usuario extends Pessoa {
         return this.email;
     }
 
-    public void setEndereco(String endereco){
-        this.endereco = endereco;
-    }
-    
-    public String getEndereco(){
-        return this.endereco;
-    }
-
-
+ 
     public void setCelular(int celular){
         this.celular = celular;
     }

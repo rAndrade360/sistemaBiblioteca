@@ -11,21 +11,22 @@ public abstract class Pessoa {
     protected String matricula;
     protected int cpf;
     protected int telefone;
+    protected String sexo;
    
 
-    public Pessoa(int id, String nome, String matricula, int cpf, int telefone){
-        this.id = id;
+    public Pessoa(String nome, String matricula, String sexo, int cpf, int telefone){
         this.nome = nome;
         this.matricula = matricula;
         this.cpf = cpf;
         this.telefone = telefone;
+        this.sexo = sexo;
     }
 
-    public Pessoa(int id, String nome, String matricula, int cpf){
-        this.id = id;
+    public Pessoa(String nome, String matricula, String sexo, int cpf){
         this.nome = nome;
         this.matricula = matricula;
         this.cpf = cpf;
+        this.sexo = sexo;
     }
     
     public void setId(int id){
@@ -64,5 +65,15 @@ public abstract class Pessoa {
     public int getTelefone(){
         return this.telefone;
     }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+    
+    
 
 }

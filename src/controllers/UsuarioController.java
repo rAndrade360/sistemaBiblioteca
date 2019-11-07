@@ -1,4 +1,7 @@
 package controllers;
+import dao.UsuarioDAO;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import models.Usuario;
 
 /**
@@ -7,8 +10,19 @@ import models.Usuario;
  */
 public class UsuarioController {
     
-    public void cadastrar(Usuario usuario){
+    public UsuarioController(){
+       
         
+    }
+    
+    public void cadastrar(Usuario usuario) throws ClassNotFoundException{
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        try{
+        usuarioDAO.insert(usuario);
+        JOptionPane.showMessageDialog(null, "Usuário Cadastrado com sucesso!");
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "Não foi possível cadastrar");
+        }
     }
     
     public void listar(){
