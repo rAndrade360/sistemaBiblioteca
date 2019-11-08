@@ -6,6 +6,8 @@
 package controllers;
 
 import java.sql.SQLException;
+import java.util.List;
+import models.Usuario;
 
 /**
  *
@@ -14,6 +16,14 @@ import java.sql.SQLException;
 public class Teste {
     public static void main(String[] args) throws ClassNotFoundException, SQLException{
         UsuarioController usuario = new UsuarioController();
+        List<Usuario> users = usuario.listar();
+        for(Usuario user : users){
+            System.out.println(user.getId());
+            System.out.println(user.getNome());
+            System.out.println("");
+        }
+
+        
        
     }
 }

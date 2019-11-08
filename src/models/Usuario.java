@@ -12,6 +12,10 @@ public class Usuario extends Pessoa {
     private String email;
     private int celular;
     private LocalDate nascimento;
+    
+    public Usuario(){
+        
+    }
 
     public Usuario(String nome, String sexo,String matricula, int cpf, int telefone, LocalDate nascimento) {
         super(nome, matricula, sexo,cpf, telefone);

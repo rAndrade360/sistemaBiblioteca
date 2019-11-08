@@ -7,6 +7,9 @@ package models;
  */
 public class Bibliotecario extends Pessoa{
     private String senha;
+    public Bibliotecario(){
+        
+    }
     public Bibliotecario(String nome, String matricula, String sexo,int cpf, int telefone, String senha){
         super(nome, matricula, sexo, cpf, telefone);
         this.senha = senha;
