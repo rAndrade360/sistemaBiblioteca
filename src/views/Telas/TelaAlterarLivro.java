@@ -481,6 +481,7 @@ public class TelaAlterarLivro extends javax.swing.JInternalFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         JOptionPane.showMessageDialog(null, " Alterado Com Sucesso! ");
+        this.setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
 
 

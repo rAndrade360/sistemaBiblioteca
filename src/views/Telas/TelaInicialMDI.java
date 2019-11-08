@@ -141,15 +141,35 @@ public class TelaInicialMDI extends javax.swing.JFrame {
         jMenu3.setText("Serviços");
 
         jMenuItem9.setText("Emprestar");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem9);
 
         jMenuItem10.setText("Devolver");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem10);
 
         jMenuItem11.setText("Renovar");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem11);
 
         jMenuItem12.setText("Reservar");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem12);
 
         jMenuBar1.add(jMenu3);
@@ -157,9 +177,19 @@ public class TelaInicialMDI extends javax.swing.JFrame {
         jMenu4.setText("Relatório");
 
         jMenuItem13.setText("Usuário");
+        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem13ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem13);
 
         jMenuItem14.setText("Livro");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem14);
 
         jMenuBar1.add(jMenu4);
@@ -231,6 +261,42 @@ public class TelaInicialMDI extends javax.swing.JFrame {
         jDesktopPane1.add(cad);
         cad.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        TelaEmprestarLivro cad = new TelaEmprestarLivro();
+        jDesktopPane1.add(cad);
+        cad.setVisible(true);
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+         TelaReservarLivro cad = new TelaReservarLivro();
+        jDesktopPane1.add(cad);
+        cad.setVisible(true);
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        TelaDevolverLivro cad = new TelaDevolverLivro();
+        jDesktopPane1.add(cad);
+        cad.setVisible(true);
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        TelaRenovarLivro cad = new TelaRenovarLivro();
+        jDesktopPane1.add(cad);
+        cad.setVisible(true);
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+        TelaRelatorioUsuario cad = new TelaRelatorioUsuario();
+        jDesktopPane1.add(cad);
+        cad.setVisible(true);
+    }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+        TelaRelatorioLivro cad = new TelaRelatorioLivro();
+        jDesktopPane1.add(cad);
+        cad.setVisible(true);
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
 
     /**
      * @param args the command line arguments

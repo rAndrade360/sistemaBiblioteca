@@ -34,9 +34,9 @@
                           <Component id="jScrollPane1" pref="370" max="32767" attributes="0"/>
                           <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jFormattedTextField1" alignment="0" min="-2" pref="65" max="-2" attributes="0"/>
                           <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
                           <Component id="jTextField1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jFormattedTextField1" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">

@@ -50,14 +50,12 @@ public class TelaRemoverUsuario extends javax.swing.JInternalFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabel1)
-                        .addGap(0, 162, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jTextField1)))
+                        .addGap(0, 152, Short.MAX_VALUE))
+                    .addComponent(jTextField1))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -91,7 +89,8 @@ public class TelaRemoverUsuario extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-          JOptionPane.showMessageDialog(null, " Removido Com Sucesso! ");
+          JOptionPane.showMessageDialog(null, "Usuário Removido! ");
+          this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

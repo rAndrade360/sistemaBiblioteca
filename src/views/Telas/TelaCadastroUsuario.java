@@ -241,6 +241,7 @@ public class TelaCadastroUsuario extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        JOptionPane.showMessageDialog(null, ""+txtNome.getText()+ " Cadastrado Com Sucesso! ");
+       this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

@@ -237,6 +237,7 @@ public class TelaAlterarUsuario extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JOptionPane.showMessageDialog(null, ""+txtNome.getText()+ " Alterado Com Sucesso! ");
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
