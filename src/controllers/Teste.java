@@ -6,8 +6,8 @@
 package controllers;
 
 import java.sql.SQLException;
-import java.util.List;
-import models.Usuario;
+import java.time.Instant;
+import models.Livro;
 
 /**
  *
@@ -15,15 +15,8 @@ import models.Usuario;
  */
 public class Teste {
     public static void main(String[] args) throws ClassNotFoundException, SQLException{
-        UsuarioController usuario = new UsuarioController();
-        List<Usuario> users = usuario.listar();
-        for(Usuario user : users){
-            System.out.println(user.getId());
-            System.out.println(user.getNome());
-            System.out.println("");
-        }
-
-        
-       
+        //LivroController livro = new LivroController();
+        //Livro book = new Livro("Renan de Adrade", "O jogo da bagaceira", 2019, "Caneta Azul");
+        //livro.cadastrar(book);
     }
 }
