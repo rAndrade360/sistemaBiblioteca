@@ -61,8 +61,10 @@ public class TelaInicialMDI extends javax.swing.JFrame {
             .addGap(0, 279, Short.MAX_VALUE)
         );
 
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/book.png"))); // NOI18N
         jMenu1.setText("Livro");
 
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/book_add.png"))); // NOI18N
         jMenuItem1.setText("Adicionar");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,6 +73,7 @@ public class TelaInicialMDI extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem1);
 
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/book_delete.png"))); // NOI18N
         jMenuItem2.setText("Remover");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,6 +82,7 @@ public class TelaInicialMDI extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem2);
 
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/book_edit.png"))); // NOI18N
         jMenuItem3.setText("Alterar");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,6 +91,7 @@ public class TelaInicialMDI extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem3);
 
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/zoom.png"))); // NOI18N
         jMenuItem4.setText("Buscar");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,6 +102,7 @@ public class TelaInicialMDI extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/user.png"))); // NOI18N
         jMenu2.setText("Usuário");
         jMenu2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,6 +110,7 @@ public class TelaInicialMDI extends javax.swing.JFrame {
             }
         });
 
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/user_add.png"))); // NOI18N
         jMenuItem5.setText("Adicionar");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,6 +119,7 @@ public class TelaInicialMDI extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem5);
 
+        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/user_delete.png"))); // NOI18N
         jMenuItem6.setText("Remover");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,6 +128,7 @@ public class TelaInicialMDI extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem6);
 
+        jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/user_edit.png"))); // NOI18N
         jMenuItem7.setText("Alterar");
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,6 +137,7 @@ public class TelaInicialMDI extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem7);
 
+        jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/zoom.png"))); // NOI18N
         jMenuItem8.setText("Buscar");
         jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,8 +148,10 @@ public class TelaInicialMDI extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/book_addresses.png"))); // NOI18N
         jMenu3.setText("Serviços");
 
+        jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/arrow_right.png"))); // NOI18N
         jMenuItem9.setText("Emprestar");
         jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,6 +160,7 @@ public class TelaInicialMDI extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem9);
 
+        jMenuItem10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/arrow_left.png"))); // NOI18N
         jMenuItem10.setText("Devolver");
         jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,6 +169,7 @@ public class TelaInicialMDI extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem10);
 
+        jMenuItem11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/arrow_refresh.png"))); // NOI18N
         jMenuItem11.setText("Renovar");
         jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,6 +178,7 @@ public class TelaInicialMDI extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem11);
 
+        jMenuItem12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/date.png"))); // NOI18N
         jMenuItem12.setText("Reservar");
         jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -176,6 +191,7 @@ public class TelaInicialMDI extends javax.swing.JFrame {
 
         jMenu4.setText("Relatório");
 
+        jMenuItem13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/user.png"))); // NOI18N
         jMenuItem13.setText("Usuário");
         jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,6 +200,7 @@ public class TelaInicialMDI extends javax.swing.JFrame {
         });
         jMenu4.add(jMenuItem13);
 
+        jMenuItem14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/book.png"))); // NOI18N
         jMenuItem14.setText("Livro");
         jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
