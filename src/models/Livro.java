@@ -9,23 +9,14 @@ public class Livro {
     private int id;
     private String autor;
     private String titulo;
-    private String subtitulo;
     private int ano;
     private String editora;
-    private int volume;
-
-    public Livro(int id, String autor, String titulo, String subtitulo, int ano, String editora, int volume){
-        this.id = id;
-        this.autor = autor;
-        this.titulo = titulo;
-        this.subtitulo = subtitulo;
-        this.ano = ano;
-        this.editora = editora;
-        this.volume = volume;
+    public Livro() {
     }
+    
+    
 
-    public Livro(int id, String autor, String titulo, int ano, String editora) {
-        this.id = id;
+    public Livro(String autor, String titulo, int ano, String editora){
         this.autor = autor;
         this.titulo = titulo;
         this.ano = ano;
@@ -48,14 +39,6 @@ public class Livro {
         return this.titulo;
     }
 
-    public void setSubtitulo(String subtitulo){
-        this.subtitulo = subtitulo;
-    }
-    
-    public String getSubtitulo(){
-        return this.subtitulo;
-    }
-
     public void setEditora(String editora){
         this.editora = editora;
     }
@@ -63,13 +46,25 @@ public class Livro {
     public String getEditora(){
         return this.editora;
     }
-
-    public void setVolume(int volume){
-        this.volume = volume;
-    }
     
-    public int getVolume(){
-        return this.volume;
+
+    public int getId() {
+        return id;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
+
+ 
+
 
 }

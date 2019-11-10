@@ -13,6 +13,9 @@ public abstract class Pessoa {
     protected int telefone;
     protected String sexo;
    
+    public Pessoa(){
+        
+    }
 
     public Pessoa(String nome, String matricula, String sexo, int cpf, int telefone){
         this.nome = nome;
@@ -31,6 +34,10 @@ public abstract class Pessoa {
     
     public void setId(int id){
         this.id = id;
+    }
+    
+    public int getId(){
+        return this.id;
     }
     
     public String getNome(){
