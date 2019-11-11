@@ -13,6 +13,8 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import models.Usuario;
 
 /**
@@ -26,24 +28,28 @@ public class UsuarioDAO {
         this.connection = Database.connect();
     }
     
-    public void insert(Usuario usuario) throws SQLException{
-        String query = "INSERT INTO usuarios(nome, matricula, sexo, cpf, telefone, email, celular, data_nascimento) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-        PreparedStatement stmt = connection.prepareStatement(query);
-        stmt.setString(1, usuario.getNome());
-        stmt.setString(2, usuario.getMatricula());
-        stmt.setString(3, usuario.getSexo());
-        stmt.setInt(4, usuario.getCpf());
-        stmt.setInt(5, usuario.getTelefone());
-        stmt.setString(6, usuario.getEmail());
-        stmt.setInt(7, usuario.getCelular());
-        stmt.setDate(8, Date.valueOf(usuario.getNascimento()));
-        System.out.println("oi" + usuario.getCelular());
-        stmt.execute();
-        stmt.close();
+    public void insert(Usuario usuario) {
+        try {
+            String query = "INSERT INTO usuarios(nome, matricula, sexo, cpf, telefone, email, celular, data_nascimento) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, usuario.getNome());
+            stmt.setString(2, usuario.getMatricula());
+            stmt.setString(3, usuario.getSexo());
+            stmt.setLong(4, usuario.getCpf());
+            stmt.setLong(5, usuario.getTelefone());
+            stmt.setString(6, usuario.getEmail());
+            stmt.setLong(7, usuario.getCelular());
+            stmt.setDate(8, Date.valueOf(usuario.getNascimento()));
+            System.out.println("oi" + usuario.getCelular());
+            stmt.execute();
+            stmt.close();
+        } catch (SQLException ex) {
+           ex.printStackTrace();
+        }
         
     }
     
-    public List<Usuario> listAll() throws SQLException{
+    public List<Usuario> listAll() {
         List<Usuario> users = new ArrayList<>();
         String query = "SELECT * FROM usuarios";
         ResultSet result;
@@ -55,17 +61,20 @@ public class UsuarioDAO {
                 user.setNome(result.getString("nome"));
                 user.setMatricula(result.getString("matricula"));
                 user.setSexo(result.getString("sexo"));
-                user.setCpf(result.getInt("cpf"));
-                user.setTelefone(result.getInt("telefone"));
+                user.setCpf(result.getLong("cpf"));
+                user.setTelefone(result.getLong("telefone"));
                 user.setEmail(result.getString("email"));
-                user.setCelular(result.getInt("celular"));
+                user.setCelular(result.getLong("celular"));
                 LocalDate date = result.getDate("data_nascimento").toLocalDate();
                 user.setNascimento(date);
                 
                 users.add(user);
+                  result.close();
             }
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        result.close();
+      
         return users;     
     }
     
@@ -82,10 +91,10 @@ public class UsuarioDAO {
                 user.setNome(result.getString("nome"));
                 user.setMatricula(result.getString("matricula"));
                 user.setSexo(result.getString("sexo"));
-                user.setCpf(result.getInt("cpf"));
-                user.setTelefone(result.getInt("telefone"));
+                user.setCpf(result.getLong("cpf"));
+                user.setTelefone(result.getLong("telefone"));
                 user.setEmail(result.getString("email"));
-                user.setCelular(result.getInt("celular"));
+                user.setCelular(result.getLong("celular"));
                 LocalDate date = result.getDate("data_nascimento").toLocalDate();
                 user.setNascimento(date);
             }
@@ -99,10 +108,10 @@ public class UsuarioDAO {
         stmt.setString(1, usuario.getNome());
         stmt.setString(2, usuario.getMatricula());
         stmt.setString(3, usuario.getSexo());
-        stmt.setInt(4, usuario.getCpf());
-        stmt.setInt(5, usuario.getTelefone());
+        stmt.setLong(4, usuario.getCpf());
+        stmt.setLong(5, usuario.getTelefone());
         stmt.setString(6, usuario.getEmail());
-        stmt.setInt(7, usuario.getCelular());
+        stmt.setLong(7, usuario.getCelular());
         stmt.setDate(8, Date.valueOf(usuario.getNascimento()));
         stmt.setLong(9, usuario.getId());
         stmt.execute();

@@ -9,15 +9,15 @@ public abstract class Pessoa {
     protected int id;
     protected String nome;
     protected String matricula;
-    protected int cpf;
-    protected int telefone;
+    protected long cpf;
+    protected long telefone;
     protected String sexo;
    
     public Pessoa(){
         
     }
 
-    public Pessoa(String nome, String matricula, String sexo, int cpf, int telefone){
+    public Pessoa(String nome, String matricula, String sexo, long cpf, long telefone){
         this.nome = nome;
         this.matricula = matricula;
         this.cpf = cpf;
@@ -25,7 +25,7 @@ public abstract class Pessoa {
         this.sexo = sexo;
     }
 
-    public Pessoa(String nome, String matricula, String sexo, int cpf){
+    public Pessoa(String nome, String matricula, String sexo, long cpf){
         this.nome = nome;
         this.matricula = matricula;
         this.cpf = cpf;
@@ -57,19 +57,19 @@ public abstract class Pessoa {
         return this.matricula;
     }
 
-    public void setCpf(int cpf){
+    public void setCpf(long cpf){
         this.cpf = cpf;
     }
     
-    public int getCpf(){
+    public long getCpf(){
         return this.cpf;
     }
     
-       public void setTelefone(int telefone){
+       public void setTelefone(long telefone){
         this.telefone = telefone;
     }
     
-    public int getTelefone(){
+    public long getTelefone(){
         return this.telefone;
     }
 

@@ -34,8 +34,8 @@ public class BibliotecarioDAO {
             stmt.setString(1, bibliotecario.getNome());
             stmt.setString(2, bibliotecario.getMatricula());
             stmt.setString(3, bibliotecario.getSexo());
-            stmt.setInt(4, bibliotecario.getCpf());
-            stmt.setInt(5, bibliotecario.getTelefone());
+            stmt.setLong(4, bibliotecario.getCpf());
+            stmt.setLong(5, bibliotecario.getTelefone());
             stmt.setString(6, bibliotecario.getSenha());
             
             stmt.execute();
@@ -58,8 +58,8 @@ public class BibliotecarioDAO {
                 bibliotecario.setNome(result.getString("nome"));
                 bibliotecario.setMatricula(result.getString("matricula"));
                 bibliotecario.setSexo(result.getString("sexo"));
-                bibliotecario.setCpf(result.getInt("cpf"));
-                bibliotecario.setTelefone(result.getInt("telefone"));
+                bibliotecario.setCpf(result.getLong("cpf"));
+                bibliotecario.setTelefone(result.getLong("telefone"));
                 bibliotecario.setSenha(result.getString("senha"));               
                 bibliotecarios.add(bibliotecario);
                 stmt.close();
@@ -86,8 +86,8 @@ public class BibliotecarioDAO {
                     bibliotecario.setNome(result.getString("nome"));
                     bibliotecario.setMatricula(result.getString("matricula"));
                     bibliotecario.setSexo(result.getString("sexo"));
-                    bibliotecario.setCpf(result.getInt("cpf"));
-                    bibliotecario.setTelefone(result.getInt("telefone"));
+                    bibliotecario.setCpf(result.getLong("cpf"));
+                    bibliotecario.setTelefone(result.getLong("telefone"));
                     bibliotecario.setSenha(result.getString("senha"));
                 }
             }
@@ -105,8 +105,8 @@ public class BibliotecarioDAO {
             stmt.setString(1, bibliotecario.getNome());
             stmt.setString(2, bibliotecario.getMatricula());
             stmt.setString(3, bibliotecario.getSexo());
-            stmt.setInt(4, bibliotecario.getCpf());
-            stmt.setInt(5, bibliotecario.getTelefone());
+            stmt.setLong(4, bibliotecario.getCpf());
+            stmt.setLong(5, bibliotecario.getTelefone());
             stmt.setString(6, bibliotecario.getSenha());
             stmt.setLong(7, bibliotecario.getId());
             stmt.execute();

@@ -10,24 +10,24 @@ import java.time.LocalDate;
  */
 public class Usuario extends Pessoa {
     private String email;
-    private int celular;
+    private long celular;
     private LocalDate nascimento;
     
     public Usuario(){
         
     }
 
-    public Usuario(String nome, String sexo,String matricula, int cpf, int telefone, LocalDate nascimento) {
+    public Usuario(String nome, String sexo,String matricula, long cpf, long telefone, LocalDate nascimento) {
         super(nome, matricula, sexo,cpf, telefone);
         this.nascimento = nascimento;
     }
     
-     public Usuario(String nome, String matricula, String sexo,int cpf, LocalDate nascimento){
+     public Usuario(String nome, String matricula, String sexo,long cpf, LocalDate nascimento){
         super(nome, matricula, sexo,cpf);
         this.nascimento = nascimento;
     }
 
-    public Usuario(String email, int celular, String sexo,LocalDate nascimento, String nome, String matricula, int cpf, int telefone) {
+    public Usuario(String email, long celular, String sexo,LocalDate nascimento, String nome, String matricula, long cpf, long telefone) {
         super(nome, matricula, sexo,cpf, telefone);
         this.email = email;
         this.celular = celular;
@@ -45,11 +45,11 @@ public class Usuario extends Pessoa {
     }
 
  
-    public void setCelular(int celular){
+    public void setCelular(long celular){
         this.celular = celular;
     }
     
-    public int getCelular(){
+    public long getCelular(){
         return this.celular;
     }
 

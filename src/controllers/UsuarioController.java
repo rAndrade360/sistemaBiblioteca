@@ -20,22 +20,23 @@ public class UsuarioController {
         
     }
     
-    public void cadastrar(Usuario usuario) throws ClassNotFoundException{
-        UsuarioDAO usuarioDAO = new UsuarioDAO();  
+    public void cadastrar(Usuario usuario) {
         try{
-           
-        usuarioDAO.insert(usuario);
-        JOptionPane.showMessageDialog(null, "Usuário Cadastrado com sucesso!");
-        }catch(SQLException ex){
-            JOptionPane.showMessageDialog(null, "Não foi possível cadastrar");
+            UsuarioDAO usuarioDAO = new UsuarioDAO();
+            
+                usuarioDAO.insert(usuario);
+                JOptionPane.showMessageDialog(null, "Usuário Cadastrado com sucesso!");
+            
+        }catch(ClassNotFoundException ex){
+            Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE,null, ex);
         }
     }
     
-    public List listar() throws ClassNotFoundException{
+    public List listar() {
         try {
             UsuarioDAO usuario = new UsuarioDAO();
             return usuario.listAll();
-        } catch (SQLException ex) {
+        } catch (ClassNotFoundException ex) {
             Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;

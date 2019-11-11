@@ -10,7 +10,7 @@ public class Bibliotecario extends Pessoa{
     public Bibliotecario(){
         
     }
-    public Bibliotecario(String nome, String matricula, String sexo,int cpf, int telefone, String senha){
+    public Bibliotecario(String nome, String matricula, String sexo,int cpf, long telefone, String senha){
         super(nome, matricula, sexo, cpf, telefone);
         this.senha = senha;
     }
