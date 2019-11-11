@@ -7,7 +7,9 @@ package controllers;
 
 import java.sql.SQLException;
 import java.time.Instant;
+import java.time.LocalDate;
 import models.Livro;
+import models.Usuario;
 
 /**
  *
@@ -15,8 +17,8 @@ import models.Livro;
  */
 public class Teste {
     public static void main(String[] args) throws ClassNotFoundException, SQLException{
-        //LivroController livro = new LivroController();
-        //Livro book = new Livro("Renan de Adrade", "O jogo da bagaceira", 2019, "Caneta Azul");
-        //livro.cadastrar(book);
+        ServicosController servico = new ServicosController();
+        LocalDate data = LocalDate.now();
+        servico.emprestar(1, "20191ergdf");
     }
 }

@@ -34,7 +34,7 @@ public class LivroController {
       return null;
     }
     
-    public Livro buscar(String codigo){
+    public Livro buscar(int codigo){
       try {
           LivroDAO book = new LivroDAO();
          return book.show(codigo);

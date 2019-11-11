@@ -67,11 +67,11 @@ public class LivroDAO {
         return null; 
     }
     
-    public Livro show(String matricula){
+    public Livro show(int codigo){
         try {
             String query = "SELECT * FROM livros WHERE id=? LIMIT 1";
             PreparedStatement stmt = connection.prepareCall(query);
-            stmt.setString(1, matricula);
+            stmt.setInt(1, codigo);
             Livro livro;
             try (ResultSet result = stmt.executeQuery()) {
                 livro = new Livro();
