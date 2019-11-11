@@ -78,51 +78,62 @@ public class UsuarioDAO {
         return users;     
     }
     
-    public Usuario show(String matricula) throws SQLException{
-        String query = "SELECT * FROM usuarios WHERE matricula = ? LIMIT 1";
-        PreparedStatement stmt = connection.prepareCall(query);
-        stmt.setString(1, matricula);
-        Usuario user;
-        try (ResultSet result = stmt.executeQuery()) {
-            user = new Usuario();
-            while(result.next()){
-                
-                user.setId(result.getInt("id"));
-                user.setNome(result.getString("nome"));
-                user.setMatricula(result.getString("matricula"));
-                user.setSexo(result.getString("sexo"));
-                user.setCpf(result.getLong("cpf"));
-                user.setTelefone(result.getLong("telefone"));
-                user.setEmail(result.getString("email"));
-                user.setCelular(result.getLong("celular"));
-                LocalDate date = result.getDate("data_nascimento").toLocalDate();
-                user.setNascimento(date);
+    public Usuario show(String matricula){
+        try {
+            String query = "SELECT * FROM usuarios WHERE matricula = ? LIMIT 1";
+            PreparedStatement stmt = connection.prepareCall(query);
+            stmt.setString(1, matricula);
+            Usuario user;
+            try (ResultSet result = stmt.executeQuery()) {
+                user = new Usuario();
+                while(result.next()){
+                    
+                    user.setId(result.getInt("id"));
+                    user.setNome(result.getString("nome"));
+                    user.setMatricula(result.getString("matricula"));
+                    user.setSexo(result.getString("sexo"));
+                    user.setCpf(result.getLong("cpf"));
+                    user.setTelefone(result.getLong("telefone"));
+                    user.setEmail(result.getString("email"));
+                    user.setCelular(result.getLong("celular"));
+                    LocalDate date = result.getDate("data_nascimento").toLocalDate();
+                    user.setNascimento(date);
+                }
             }
+            return user;
+        }   catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return user;
+        return null;
     }
     
-    public void update(Usuario usuario) throws SQLException{
-        String query = "UPDATE usuarios SET nome=?, matricula = ?, sexo=?, cpf=?, telefone=?, email=?, celular=?, data_nascimento=? WHERE id=?";
-        PreparedStatement stmt = connection.prepareStatement(query);
-        stmt.setString(1, usuario.getNome());
-        stmt.setString(2, usuario.getMatricula());
-        stmt.setString(3, usuario.getSexo());
-        stmt.setLong(4, usuario.getCpf());
-        stmt.setLong(5, usuario.getTelefone());
-        stmt.setString(6, usuario.getEmail());
-        stmt.setLong(7, usuario.getCelular());
-        stmt.setDate(8, Date.valueOf(usuario.getNascimento()));
-        stmt.setLong(9, usuario.getId());
-        stmt.execute();
-        stmt.close();
+    public void update(Usuario usuario){
+        try {
+            String query = "UPDATE usuarios SET nome=?, matricula = ?, sexo=?, cpf=?, telefone=?, email=?, celular=?, data_nascimento=? WHERE id=?";
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, usuario.getNome());
+            stmt.setString(2, usuario.getMatricula());
+            stmt.setString(3, usuario.getSexo());
+            stmt.setLong(4, usuario.getCpf());
+            stmt.setLong(5, usuario.getTelefone());
+            stmt.setString(6, usuario.getEmail());
+            stmt.setLong(7, usuario.getCelular());
+            stmt.setDate(8, Date.valueOf(usuario.getNascimento()));
+            stmt.setLong(9, usuario.getId());
+            stmt.execute();
+            stmt.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
-    public void delete(Usuario usuario) throws SQLException{
+    public void delete(Usuario usuario){
         String query = "DELETE FROM usuarios WHERE id=?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setLong(1, usuario.getId());
             stmt.execute();
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     

@@ -5,6 +5,8 @@
  */
 package views.Telas;
 
+import controllers.ServicosController;
+import java.time.LocalDate;
 import javax.swing.JOptionPane;
 
 /**
@@ -30,9 +32,9 @@ public class TelaDevolverLivro extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtMatricula = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
-        jTextField5 = new javax.swing.JTextField();
+        txtCodigo = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -41,7 +43,7 @@ public class TelaDevolverLivro extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Matricula:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 31, 253, -1));
+        getContentPane().add(txtMatricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 31, 253, -1));
 
         jButton4.setText("Devolver");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -50,7 +52,7 @@ public class TelaDevolverLivro extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 120, -1, -1));
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 77, 253, -1));
+        getContentPane().add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 77, 253, -1));
 
         jLabel10.setText("Código:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 57, -1, -1));
@@ -62,7 +64,10 @@ public class TelaDevolverLivro extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        JOptionPane.showMessageDialog(null,"Devolução Realizada! ");
+        
+         ServicosController servico = new ServicosController();
+        int codigo = Integer.parseInt(txtCodigo.getText());
+        servico.devolver(codigo, txtMatricula.getText());
         this.setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -72,7 +77,7 @@ public class TelaDevolverLivro extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField txtCodigo;
+    private javax.swing.JTextField txtMatricula;
     // End of variables declaration//GEN-END:variables
 }

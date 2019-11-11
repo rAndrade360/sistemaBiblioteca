@@ -42,36 +42,39 @@ public class UsuarioController {
         return null;
     }
     
-    public Usuario buscar(String matricula) throws ClassNotFoundException{
-        UsuarioDAO usuario = new UsuarioDAO();
+    public Usuario buscar(String matricula) {
         try {
+            UsuarioDAO usuario = new UsuarioDAO();
+            
             return usuario.show(matricula);
-        } catch (SQLException ex) {
+           
+        } catch (ClassNotFoundException ex) {
             Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null, "Não foi possível encontrar usuário");
         }
-        return null;
+         return null;
     }
     
-    public void atualizar(Usuario usuario) throws ClassNotFoundException{
-         UsuarioDAO usuarioDAO = new UsuarioDAO();
+    public void atualizar(Usuario usuario) {
         try {
-            usuarioDAO.update(usuario);
-            JOptionPane.showMessageDialog(null, "Usuário alterado com sucesso!");
-        } catch (SQLException ex) {
+            UsuarioDAO usuarioDAO = new UsuarioDAO();
+                usuarioDAO.update(usuario);
+                JOptionPane.showMessageDialog(null, "Usuário alterado com sucesso!");
+            
+        } catch (ClassNotFoundException ex) {
             Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null, "Não foi possível alterar usuário");
         }
     }
     
-    public void deletar(Usuario usuario) throws ClassNotFoundException{
-        UsuarioDAO usuarioDAO = new UsuarioDAO();
+    public void deletar(String matricula) {
         try {
-            usuarioDAO.delete(usuario);
-            JOptionPane.showMessageDialog(null, "Usuário removido com sucesso!");
-        } catch (SQLException ex) {
+            UsuarioDAO usuarioDAO = new UsuarioDAO();
+                Usuario user = usuarioDAO.show(matricula);
+                usuarioDAO.delete(user);
+                JOptionPane.showMessageDialog(null, "Usuário removido com sucesso!");
+
+        } catch (ClassNotFoundException ex) {
             Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null, "Não foi possível remover usuário");
+             JOptionPane.showMessageDialog(null, "Não foi possível remover usuário");
         }
     }
 }

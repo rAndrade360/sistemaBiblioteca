@@ -40,11 +40,12 @@ public class ServicosController {
             
             if(emp.getId() == 0){
                  servicos.emprestar(emprestimo);
-                 
+                 JOptionPane.showMessageDialog(null, "Livro emprestado com sucesso!");
             }
             System.out.println(emp.getId());
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ServicosController.class.getName()).log(Level.SEVERE, null, ex);
+             JOptionPane.showMessageDialog(null, "Não foi possível realizar a operação!");
         }
         
     }

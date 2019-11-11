@@ -5,6 +5,7 @@
  */
 package views.Telas;
 
+import controllers.UsuarioController;
 import javax.swing.JOptionPane;
 
 /**
@@ -30,7 +31,7 @@ public class TelaRemoverUsuario extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtMatricula = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
@@ -40,7 +41,7 @@ public class TelaRemoverUsuario extends javax.swing.JInternalFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Matrícula:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 11, -1, -1));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 31, 242, -1));
+        getContentPane().add(txtMatricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 31, 242, -1));
 
         jButton1.setForeground(new java.awt.Color(255, 0, 0));
         jButton1.setText("Remover");
@@ -58,7 +59,8 @@ public class TelaRemoverUsuario extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-          JOptionPane.showMessageDialog(null, "Usuário Removido! ");
+        UsuarioController usuario = new UsuarioController();
+        usuario.deletar(txtMatricula.getText());
           this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -67,6 +69,6 @@ public class TelaRemoverUsuario extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtMatricula;
     // End of variables declaration//GEN-END:variables
 }

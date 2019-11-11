@@ -53,10 +53,13 @@ public class LivroController {
       }
     }
     
-    public void deletar(Livro livro){
+    public void deletar(int codigo){
+        Livro livro = new Livro();
+        livro.setId(codigo);
       try {
           LivroDAO book = new LivroDAO();
           book.delete(livro);
+          JOptionPane.showMessageDialog(null, "Livro Removido com sucesso!");
       } catch (ClassNotFoundException ex) {
           Logger.getLogger(LivroController.class.getName()).log(Level.SEVERE, null, ex);
       }
