@@ -5,7 +5,12 @@
  */
 package views.Telas;
 
+import controllers.LivroController;
+import controllers.UsuarioController;
+import java.time.LocalDate;
 import javax.swing.JOptionPane;
+import models.Livro;
+import models.Usuario;
 
 /**
  *
@@ -31,14 +36,14 @@ public class TelaCadastrarLivro extends javax.swing.JInternalFrame {
 
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtTitulo = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jTextField1 = new javax.swing.JTextField();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        txtAutor = new javax.swing.JTextArea();
+        txtEditora = new javax.swing.JTextField();
+        txtAno = new javax.swing.JFormattedTextField();
         jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
@@ -48,9 +53,9 @@ public class TelaCadastrarLivro extends javax.swing.JInternalFrame {
         jLabel3.setText("Titulo:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtTitulo.setColumns(20);
+        txtTitulo.setRows(5);
+        jScrollPane1.setViewportView(txtTitulo);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 370, 60));
 
@@ -63,19 +68,19 @@ public class TelaCadastrarLivro extends javax.swing.JInternalFrame {
         jLabel4.setText("Ano:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 228, -1, -1));
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        txtAutor.setColumns(20);
+        txtAutor.setRows(5);
+        jScrollPane2.setViewportView(txtAutor);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 111, 370, 55));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 197, 370, -1));
+        getContentPane().add(txtEditora, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 197, 370, -1));
 
         try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+            txtAno.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        getContentPane().add(jFormattedTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 248, 70, -1));
+        getContentPane().add(txtAno, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 248, 70, -1));
 
         jButton1.setForeground(new java.awt.Color(0, 153, 0));
         jButton1.setText("Cadastrar");
@@ -93,14 +98,30 @@ public class TelaCadastrarLivro extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JOptionPane.showMessageDialog(null, " Cadastrado Realizado! ");
-        this.setVisible(false);
+       
+            Livro livro = new Livro();
+            String titulo = txtTitulo.getText();
+            
+            String autor = txtAutor.getText();
+                   
+            String editora = txtEditora.getText();
+            
+            int ano = Integer.parseInt(txtAno.getText());
+             
+            livro.setTitulo(txtTitulo.getText());
+            livro.setAutor(txtAutor.getText());
+            livro.setEditora(txtEditora.getText());
+            livro.setAno(Integer.parseInt(txtAno.getText()));
+
+            LivroController user = new LivroController();
+            user.cadastrar(livro);
+            
+            this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -108,8 +129,9 @@ public class TelaCadastrarLivro extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JFormattedTextField txtAno;
+    private javax.swing.JTextArea txtAutor;
+    private javax.swing.JTextField txtEditora;
+    private javax.swing.JTextArea txtTitulo;
     // End of variables declaration//GEN-END:variables
 }
