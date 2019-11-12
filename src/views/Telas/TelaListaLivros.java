@@ -55,6 +55,9 @@ public class TelaListaLivros extends javax.swing.JInternalFrame {
 
         setClosable(true);
 
+        jScrollPane1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+
+        jtbLivros.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jtbLivros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

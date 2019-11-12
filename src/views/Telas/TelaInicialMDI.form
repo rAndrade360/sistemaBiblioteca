@@ -58,6 +58,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itmListar">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/views/Imagens/page_white_text.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Listar"/>
               </Properties>
               <Events>
@@ -123,6 +126,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itmListarUsuario">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/views/Imagens/page_white_text.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Listar"/>
               </Properties>
               <Events>

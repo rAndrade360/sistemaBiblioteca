@@ -112,6 +112,7 @@ public class TelaInicialMDI extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem4);
 
+        itmListar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/page_white_text.png"))); // NOI18N
         itmListar.setText("Listar");
         itmListar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,6 +167,7 @@ public class TelaInicialMDI extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem8);
 
+        itmListarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/page_white_text.png"))); // NOI18N
         itmListarUsuario.setText("Listar");
         itmListarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

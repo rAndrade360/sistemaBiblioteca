@@ -160,6 +160,7 @@ public class TelaAlterarLivro extends javax.swing.JInternalFrame {
         getContentPane().add(jInternalFrame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 160, 0, 0));
 
         txtTitulo.setColumns(20);
+        txtTitulo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtTitulo.setRows(5);
         jScrollPane7.setViewportView(txtTitulo);
 
@@ -170,6 +171,7 @@ public class TelaAlterarLivro extends javax.swing.JInternalFrame {
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
         txtAutor.setColumns(20);
+        txtAutor.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtAutor.setRows(5);
         jScrollPane8.setViewportView(txtAutor);
 
@@ -178,6 +180,8 @@ public class TelaAlterarLivro extends javax.swing.JInternalFrame {
         jLabel14.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel14.setText("Autor(es):");
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
+
+        txtEditora.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         getContentPane().add(txtEditora, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 364, -1));
 
         jLabel15.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -209,6 +213,8 @@ public class TelaAlterarLivro extends javax.swing.JInternalFrame {
                 btnBuscarActionPerformed(evt);
             }
         });
+
+        spnCodigo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -244,6 +250,7 @@ public class TelaAlterarLivro extends javax.swing.JInternalFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtAno.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         getContentPane().add(txtAno, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 80, 20));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/background2 - 400x450.jpg"))); // NOI18N

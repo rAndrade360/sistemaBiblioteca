@@ -55,6 +55,7 @@ public class TelaCadastrarLivro extends javax.swing.JInternalFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
         txtTitulo.setColumns(20);
+        txtTitulo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtTitulo.setRows(5);
         jScrollPane1.setViewportView(txtTitulo);
 
@@ -73,10 +74,13 @@ public class TelaCadastrarLivro extends javax.swing.JInternalFrame {
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 228, -1, -1));
 
         txtAutor.setColumns(20);
+        txtAutor.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtAutor.setRows(5);
         jScrollPane2.setViewportView(txtAutor);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 111, 370, 55));
+
+        txtEditora.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         getContentPane().add(txtEditora, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 197, 370, -1));
 
         try {
@@ -84,6 +88,7 @@ public class TelaCadastrarLivro extends javax.swing.JInternalFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtAno.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         getContentPane().add(txtAno, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 248, 70, -1));
 
         jButton1.setBackground(new java.awt.Color(255, 51, 51));
