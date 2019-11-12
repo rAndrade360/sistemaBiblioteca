@@ -38,11 +38,14 @@ public class TelaRemoverUsuario extends javax.swing.JInternalFrame {
         setClosable(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Matrícula:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 11, -1, -1));
-        getContentPane().add(txtMatricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 31, 242, -1));
+        getContentPane().add(txtMatricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 242, -1));
 
+        jButton1.setBackground(new java.awt.Color(255, 51, 51));
+        jButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 0, 0));
         jButton1.setText("Remover");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -50,7 +53,7 @@ public class TelaRemoverUsuario extends javax.swing.JInternalFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 86, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/usuario - 300x150.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -30, 300, 150));

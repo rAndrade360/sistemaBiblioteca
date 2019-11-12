@@ -38,11 +38,14 @@ public class TelaRemoverLivro extends javax.swing.JInternalFrame {
 
         setClosable(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(spnCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 240, 30));
+        getContentPane().add(spnCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 240, 20));
 
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel1.setText("Código:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
 
+        jButton1.setBackground(new java.awt.Color(255, 51, 51));
+        jButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 0, 0));
         jButton1.setText("Remover");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -50,7 +53,7 @@ public class TelaRemoverLivro extends javax.swing.JInternalFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 86, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/background2 - 300x150.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -30, 300, 150));
