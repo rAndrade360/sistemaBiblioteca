@@ -24,7 +24,7 @@ public class LivroController {
       }
     }
     
-    public List listar(){
+    public List<Livro> listar(){
       try {
           LivroDAO book = new LivroDAO();
           return book.listAll();

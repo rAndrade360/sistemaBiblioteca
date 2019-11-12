@@ -5,6 +5,9 @@
  */
 package views.Telas;
 
+import controllers.BibliotecarioController;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author renan
@@ -28,8 +31,8 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        txtUsuario = new javax.swing.JTextField();
+        txtSenha = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -38,27 +41,28 @@ public class Login extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtUsuario.setBackground(new java.awt.Color(204, 204, 204));
+        txtUsuario.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtUsuario.setForeground(new java.awt.Color(51, 51, 51));
+        txtUsuario.setBorder(null);
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtUsuarioActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 290, 40));
+        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 290, 40));
 
-        jPasswordField1.setBackground(new java.awt.Color(204, 204, 204));
-        jPasswordField1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPasswordField1.setForeground(new java.awt.Color(51, 51, 51));
-        jPasswordField1.setBorder(null);
-        jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 290, 40));
+        txtSenha.setBackground(new java.awt.Color(204, 204, 204));
+        txtSenha.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtSenha.setForeground(new java.awt.Color(51, 51, 51));
+        txtSenha.setBorder(null);
+        jPanel1.add(txtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 290, 40));
 
         jButton1.setBackground(new java.awt.Color(255, 51, 51));
         jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -108,17 +112,24 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 360));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtUsuarioActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        BibliotecarioController bibliotecario = new BibliotecarioController();
+        boolean login = bibliotecario.login(txtUsuario.getText(), txtSenha.getText());
+        if(login){
         TelaInicialMDI mdi = new TelaInicialMDI();
         mdi.setVisible(true);
         this.setVisible(false);
+        }else{
+            JOptionPane.showMessageDialog(null,"Usuário ou senha incorretos, tente novamente!");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -164,7 +175,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPasswordField txtSenha;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

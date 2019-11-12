@@ -56,10 +56,11 @@ public class LivroDAO {
                 livro.setEditora(result.getString("editora"));
                 
                 books.add(livro);
-                stmt.close();
+               
+            }
+             stmt.close();
                 result.close();
                  return books;
-            }
         } catch (SQLException ex) {
             Logger.getLogger(LivroDAO.class.getName()).log(Level.SEVERE, null, ex);
         }

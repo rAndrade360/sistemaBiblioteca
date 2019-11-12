@@ -3,6 +3,7 @@ import dao.BibliotecarioDAO;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import models.Bibliotecario;
 /**
  *
@@ -55,5 +56,19 @@ public class BibliotecarioController {
          } catch (ClassNotFoundException ex) {
              Logger.getLogger(BibliotecarioController.class.getName()).log(Level.SEVERE, null, ex);
          }
+    }
+    
+    public boolean login(String matricula, String senha){
+         try {
+             Bibliotecario bibliotecario = new Bibliotecario();
+             bibliotecario.setMatricula(matricula);
+             bibliotecario.setSenha(senha);
+             BibliotecarioDAO biblio = new BibliotecarioDAO();
+             boolean log = biblio.login(bibliotecario);
+             return log;
+         } catch (ClassNotFoundException ex) {
+             JOptionPane.showMessageDialog(null, "Erro de Conexão!");
+         }
+         return false;
     }
 }

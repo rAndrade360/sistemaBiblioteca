@@ -69,8 +69,10 @@ public class UsuarioDAO {
                 user.setNascimento(date);
                 
                 users.add(user);
-                  result.close();
+                 
             }
+             result.close();
+             stmt.close();
         } catch (SQLException ex) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         }

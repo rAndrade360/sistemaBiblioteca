@@ -32,7 +32,7 @@ public class UsuarioController {
         }
     }
     
-    public List listar() {
+    public List<Usuario> listar() {
         try {
             UsuarioDAO usuario = new UsuarioDAO();
             return usuario.listAll();

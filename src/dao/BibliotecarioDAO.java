@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import models.Bibliotecario;
 
 
@@ -124,6 +125,23 @@ public class BibliotecarioDAO {
         } catch (SQLException ex) {
             Logger.getLogger(BibliotecarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public boolean login(Bibliotecario bibliotecario){
+        try {
+            String query = "SELECT * FROM bibliotecarios WHERE matricula = ? and senha = ? LIMIT 1";
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, bibliotecario.getMatricula());
+            stmt.setString(2, bibliotecario.getSenha());
+            ResultSet res = stmt.executeQuery();
+            boolean next = res.next();
+            res.close();
+            stmt.close();
+            return next;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao logar!");
+        }
+        return false;
     }
     
 }

@@ -45,11 +45,13 @@ public class TelaInicialMDI extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        itmListar = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        itmListarUsuario = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
@@ -110,6 +112,14 @@ public class TelaInicialMDI extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem4);
 
+        itmListar.setText("Listar");
+        itmListar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmListarActionPerformed(evt);
+            }
+        });
+        jMenu1.add(itmListar);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/user.png"))); // NOI18N
@@ -155,6 +165,14 @@ public class TelaInicialMDI extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem8);
+
+        itmListarUsuario.setText("Listar");
+        itmListarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmListarUsuarioActionPerformed(evt);
+            }
+        });
+        jMenu2.add(itmListarUsuario);
 
         jMenuBar1.add(jMenu2);
 
@@ -282,6 +300,20 @@ public class TelaInicialMDI extends javax.swing.JFrame {
         cad.setVisible(true);
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
+    private void itmListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmListarActionPerformed
+        // TODO add your handling code here:
+        TelaListaLivros tela = new TelaListaLivros();
+        jDesktopPane1.add(tela);
+        tela.setVisible(true);
+    }//GEN-LAST:event_itmListarActionPerformed
+
+    private void itmListarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmListarUsuarioActionPerformed
+                // TODO add your handling code here:
+        TelaListaUsuarios tela = new TelaListaUsuarios();
+        jDesktopPane1.add(tela);
+        tela.setVisible(true);
+    }//GEN-LAST:event_itmListarUsuarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -318,6 +350,8 @@ public class TelaInicialMDI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem itmListar;
+    private javax.swing.JMenuItem itmListarUsuario;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
