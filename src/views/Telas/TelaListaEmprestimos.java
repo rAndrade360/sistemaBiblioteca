@@ -5,42 +5,39 @@
  */
 package views.Telas;
 
-import controllers.LivroController;
+import controllers.ServicosController;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
-import models.Livro;
 
 /**
  *
  * @author renan
  */
-public class TelaListaLivros extends javax.swing.JInternalFrame {
+public class TelaListaEmprestimos extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form TelaListaLivros
+     * Creates new form TelaListaEmprestimos
      */
-    public TelaListaLivros() {
+    public TelaListaEmprestimos() {
         initComponents();
-        DefaultTableModel modelo = (DefaultTableModel) jtbLivros.getModel();
-        jtbLivros.setRowSorter(new TableRowSorter(modelo));
+      DefaultTableModel modelo = (DefaultTableModel) jtbEmprestimos.getModel();
+        jtbEmprestimos.setRowSorter(new TableRowSorter(modelo));
         readTable();
     }
     
-    public final void readTable(){
-         DefaultTableModel modelo = (DefaultTableModel) jtbLivros.getModel();
-         LivroController livro = new LivroController();
+    public void readTable(){
+         DefaultTableModel modelo = (DefaultTableModel) jtbEmprestimos.getModel();
+         ServicosController servicos = new ServicosController();
          modelo.setNumRows(0);
-         livro.listar().forEach((book) -> {
+         servicos.listaEmprestimos().forEach((emp) -> {
              modelo.addRow(new Object[]{
-                 book.getId(),
-                 book.getTitulo(),
-                 book.getAutor(),
-                 book.getEditora(),
-                 book.getAno()
+                 emp.getLivro().getTitulo(),
+                 emp.getUsuario().getNome(),
+                 emp.getData_emprestimo().toString(),
+                 emp.getData_devolucao().toString()
              });
         });
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -51,32 +48,32 @@ public class TelaListaLivros extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jtbLivros = new javax.swing.JTable();
+        jtbEmprestimos = new javax.swing.JTable();
 
         setClosable(true);
 
         jScrollPane1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
 
-        jtbLivros.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jtbLivros.setModel(new javax.swing.table.DefaultTableModel(
+        jtbEmprestimos.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jtbEmprestimos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Titulo", "Autor", "Editora", "Ano"
+                "Titulo do Livro", "Usuario", "Data de Empréstimo", "Data de Devolução"
             }
         ));
-        jScrollPane1.setViewportView(jtbLivros);
+        jScrollPane1.setViewportView(jtbEmprestimos);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 612, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE)
         );
 
         pack();
@@ -85,6 +82,6 @@ public class TelaListaLivros extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jtbLivros;
+    private javax.swing.JTable jtbEmprestimos;
     // End of variables declaration//GEN-END:variables
 }

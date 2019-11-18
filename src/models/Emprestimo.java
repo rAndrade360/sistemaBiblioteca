@@ -16,11 +16,9 @@ public class Emprestimo {
     private Usuario usuario;
     private Livro livro;
     private LocalDate data_emprestimo;
-    private boolean devolvido;
     private LocalDate data_devolucao;
-
     public Emprestimo(){
-        this.devolvido = false;
+        
     }
 
     public int getId() {
@@ -53,14 +51,6 @@ public class Emprestimo {
 
     public void setData_emprestimo(LocalDate data_emprestimo) {
         this.data_emprestimo = data_emprestimo;
-    }
-
-    public boolean isDevolvido() {
-        return devolvido;
-    }
-
-    public void setDevolvido(boolean devolvido) {
-        this.devolvido = devolvido;
     }
 
     public LocalDate getData_devolucao() {

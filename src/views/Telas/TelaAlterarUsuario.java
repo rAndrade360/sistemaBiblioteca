@@ -7,7 +7,6 @@ package views.Telas;
 
 import controllers.UsuarioController;
 import java.time.LocalDate;
-import javax.swing.JOptionPane;
 import models.Usuario;
 
 /**
@@ -53,13 +52,13 @@ public class TelaAlterarUsuario extends javax.swing.JInternalFrame {
         txtMatricula = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         btnAlterar = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
 
         setClosable(true);
-        setPreferredSize(new java.awt.Dimension(640, 480));
+        setPreferredSize(new java.awt.Dimension(680, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Contato"));
+        jPanel2.setPreferredSize(new java.awt.Dimension(270, 300));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel5.setText("Telefone Fixo:");
@@ -101,9 +100,9 @@ public class TelaAlterarUsuario extends javax.swing.JInternalFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
@@ -112,10 +111,11 @@ public class TelaAlterarUsuario extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, 190));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 640, 190));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Dados Pessoais"));
 
@@ -165,7 +165,7 @@ public class TelaAlterarUsuario extends javax.swing.JInternalFrame {
                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel4)
                     .addComponent(txtData, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
@@ -194,7 +194,7 @@ public class TelaAlterarUsuario extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 600, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 640, -1));
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel9.setText("Matrícula:");
@@ -220,11 +220,11 @@ public class TelaAlterarUsuario extends javax.swing.JInternalFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(txtMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 32, Short.MAX_VALUE))))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(99, 99, 99)
                 .addComponent(btnBuscar)
-                .addGap(84, 84, 84))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,10 +235,10 @@ public class TelaAlterarUsuario extends javax.swing.JInternalFrame {
                 .addComponent(txtMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnBuscar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(7, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 25, -1, 90));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 280, 100));
 
         btnAlterar.setBackground(new java.awt.Color(255, 51, 51));
         btnAlterar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -248,10 +248,7 @@ public class TelaAlterarUsuario extends javax.swing.JInternalFrame {
                 btnAlterarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 410, -1, -1));
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/usuario - 640x480.jpg"))); // NOI18N
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -30, 640, 480));
+        getContentPane().add(btnAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 460, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -262,8 +259,9 @@ public void setComponents(Usuario usuario){
     txtCpf.setText(String.valueOf(usuario.getCpf()));
     LocalDate nascimento = usuario.getNascimento();
     String nasc = nascimento.toString();
-    nasc = nasc.replace("-", "");
-    txtData.setText(nasc);
+    String nascm[] = nasc.split("-");
+    String nascim= nascm[2]+nascm[1]+nascm[0];
+    txtData.setText(nascim);
     cbmSexo.setSelectedItem(usuario.getSexo());
     txtTelefone.setText(String.valueOf(usuario.getTelefone()));
     txtCelular.setText(String.valueOf(usuario.getCelular()));
@@ -275,16 +273,23 @@ public void setComponents(Usuario usuario){
     }//GEN-LAST:event_cbmSexoActionPerformed
 
   private String matricula;
+  private int id;
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         UsuarioController usuario = new UsuarioController();
         this.matricula = txtMatricula.getText();
-        Usuario user = usuario.buscar(this.matricula);
+        Usuario user = new Usuario();
+        user.setMatricula(this.matricula);
+        user = usuario.buscar(user);
+        this.id = user.getId();
+        System.out.println(user.getId());
         setComponents(user);
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
-       Usuario usuario = new Usuario();
+     
+        
+        Usuario usuario = new Usuario();
             String cpf = txtCpf.getText();
             cpf = cpf.replace("-", "");
             cpf = cpf.replace(".", "");
@@ -292,8 +297,9 @@ public void setComponents(Usuario usuario){
             
             String dataNascimento = txtData.getText();
             String dataN[] = dataNascimento.split("/");
+            System.out.println(dataN[2]+"/"+dataN[1]+"/"+dataN[0]);
             LocalDate dataLocal = LocalDate.of(Integer.parseInt(dataN[2]), Integer.parseInt(dataN[1]), Integer.parseInt(dataN[0]));
-            
+            System.out.println(dataLocal.toString());
             String telefone = txtTelefone.getText();
             telefone = telefone.replace("(", "");
             telefone = telefone.replace(")", "");
@@ -306,6 +312,7 @@ public void setComponents(Usuario usuario){
             celular = celular.replace("-", "");
             long NumCelular = Long.parseLong(celular);
             
+            usuario.setId(this.id);
             usuario.setNome(txtNome.getText());
             usuario.setCpf(Cpf);
             usuario.setNascimento(dataLocal);
@@ -317,6 +324,7 @@ public void setComponents(Usuario usuario){
             
             UsuarioController user = new UsuarioController();
             user.atualizar(usuario);
+            
     }//GEN-LAST:event_btnAlterarActionPerformed
 
 
@@ -331,7 +339,6 @@ public void setComponents(Usuario usuario){
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

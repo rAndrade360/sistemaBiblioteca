@@ -6,8 +6,10 @@
 package views.Telas;
 
 import controllers.ServicosController;
-import java.time.LocalDate;
-import javax.swing.JOptionPane;
+import java.awt.Image;
+import java.awt.Graphics;
+import javax.swing.ImageIcon;
+import models.Usuario;
 
 /**
  *
@@ -36,33 +38,41 @@ public class TelaDevolverLivro extends javax.swing.JInternalFrame {
         jButton4 = new javax.swing.JButton();
         txtCodigo = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        ImageIcon icon = new ImageIcon(getClass().getResource("/views/Imagens/servicos.jpg"));
+        Image image = icon.getImage();
+        jPanel1 = new javax.swing.JPanel(){
+            public void paintComponent(Graphics g){
+                g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+            }
+        };
 
         setClosable(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
         jLabel1.setText("Matrícula:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
         getContentPane().add(txtMatricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 31, 253, -1));
 
-        jButton4.setBackground(new java.awt.Color(255, 51, 51));
-        jButton4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jButton4.setBackground(new java.awt.Color(0, 204, 0));
+        jButton4.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Devolver");
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 120, -1, -1));
-        getContentPane().add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 77, 253, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, -1, -1));
+        getContentPane().add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 253, -1));
 
-        jLabel10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
         jLabel10.setText("Código:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 57, -1, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/background2 - 300x200.jpg"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -30, 300, 200));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 200));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -71,7 +81,9 @@ public class TelaDevolverLivro extends javax.swing.JInternalFrame {
         
          ServicosController servico = new ServicosController();
         int codigo = Integer.parseInt(txtCodigo.getText());
-        servico.devolver(codigo, txtMatricula.getText());
+        Usuario user = new Usuario();
+        user.setMatricula(txtMatricula.getText());
+        servico.devolver(codigo, user);
         this.setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -80,7 +92,7 @@ public class TelaDevolverLivro extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtMatricula;
     // End of variables declaration//GEN-END:variables

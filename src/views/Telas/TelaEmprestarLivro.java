@@ -7,8 +7,10 @@ package views.Telas;
 
 import controllers.ServicosController;
 import java.time.LocalDate;
-import javax.swing.JOptionPane;
-
+import java.awt.Image;
+import java.awt.Graphics;
+import javax.swing.ImageIcon;
+import models.Usuario;
 /**
  *
  * @author Victor
@@ -33,36 +35,62 @@ public class TelaEmprestarLivro extends javax.swing.JInternalFrame {
 
         jLabel1 = new javax.swing.JLabel();
         txtMatricula = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        txtCodigo = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
+        ImageIcon icon = new ImageIcon(getClass().getResource("/views/Imagens/servicos.jpg"));
+        Image image = icon.getImage();
+        jPanel1 = new javax.swing.JPanel(){
+            public void paintComponent(Graphics g){
+                g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+            }
+        };
+        txtData = new javax.swing.JFormattedTextField();
         jLabel2 = new javax.swing.JLabel();
+        txtCodigo = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
 
         setClosable(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("Matrícula:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
         getContentPane().add(txtMatricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 248, -1));
 
-        jLabel8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel8.setText("Código:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 62, -1, -1));
-        getContentPane().add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 248, -1));
-
-        jButton4.setBackground(new java.awt.Color(255, 51, 51));
-        jButton4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jButton4.setBackground(new java.awt.Color(0, 204, 204));
+        jButton4.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Emprestar");
+        jButton4.setBorder(null);
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, -1, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 90, 30));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/background2 - 300x200.jpg"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -30, 300, 200));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        try {
+            txtData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jPanel1.add(txtData, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 100, 30));
+
+        jLabel2.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel2.setText("Devolução:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 110, -1));
+        jPanel1.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 248, -1));
+
+        jLabel8.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel8.setText("Código:");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 250));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -71,7 +99,12 @@ public class TelaEmprestarLivro extends javax.swing.JInternalFrame {
        
          ServicosController servico = new ServicosController();
         int codigo = Integer.parseInt(txtCodigo.getText());
-        servico.emprestar(codigo, txtMatricula.getText());
+        String data = txtData.getText();
+        String dataNasc[] = data.split("/");
+        LocalDate date = LocalDate.of(Integer.parseInt(dataNasc[2]),Integer.parseInt(dataNasc[1]), Integer.parseInt(dataNasc[0]));
+        Usuario user = new Usuario();
+        user.setMatricula(txtMatricula.getText());
+        servico.emprestar(codigo, user, date);
         this.setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -81,7 +114,9 @@ public class TelaEmprestarLivro extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtCodigo;
+    private javax.swing.JFormattedTextField txtData;
     private javax.swing.JTextField txtMatricula;
     // End of variables declaration//GEN-END:variables
 }

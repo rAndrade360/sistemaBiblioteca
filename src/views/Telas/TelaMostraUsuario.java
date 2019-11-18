@@ -251,7 +251,9 @@ public class TelaMostraUsuario extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         UsuarioController user = new UsuarioController();
-        Usuario usuario = user.buscar(txtMatricula.getText());
+        Usuario usuario = new Usuario();
+        usuario.setMatricula(txtMatricula.getText());
+        usuario = user.buscar(usuario);
         setComponents(usuario);
     }//GEN-LAST:event_jButton1ActionPerformed
 

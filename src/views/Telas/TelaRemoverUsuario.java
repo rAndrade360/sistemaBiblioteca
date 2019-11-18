@@ -7,6 +7,7 @@ package views.Telas;
 
 import controllers.UsuarioController;
 import javax.swing.JOptionPane;
+import models.Usuario;
 
 /**
  *
@@ -33,7 +34,6 @@ public class TelaRemoverUsuario extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         txtMatricula = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
 
         setClosable(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -55,15 +55,14 @@ public class TelaRemoverUsuario extends javax.swing.JInternalFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/usuario - 300x150.jpg"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -30, 300, 150));
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         UsuarioController usuario = new UsuarioController();
-        usuario.deletar(txtMatricula.getText());
+        Usuario user = new Usuario();
+        user.setMatricula(txtMatricula.getText());
+        usuario.deletar(user);
           this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -71,7 +70,6 @@ public class TelaRemoverUsuario extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField txtMatricula;
     // End of variables declaration//GEN-END:variables
 }

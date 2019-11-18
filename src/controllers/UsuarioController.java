@@ -42,11 +42,11 @@ public class UsuarioController {
         return null;
     }
     
-    public Usuario buscar(String matricula) {
+    public Usuario buscar(Usuario usuario) {
         try {
-            UsuarioDAO usuario = new UsuarioDAO();
+            UsuarioDAO usuarioDAO = new UsuarioDAO();
             
-            return usuario.show(matricula);
+            return usuarioDAO.show(usuario);
            
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
@@ -65,10 +65,10 @@ public class UsuarioController {
         }
     }
     
-    public void deletar(String matricula) {
+    public void deletar(Usuario usuario) {
         try {
             UsuarioDAO usuarioDAO = new UsuarioDAO();
-                Usuario user = usuarioDAO.show(matricula);
+                Usuario user = usuarioDAO.show(usuario);
                 usuarioDAO.delete(user);
                 JOptionPane.showMessageDialog(null, "Usuário removido com sucesso!");
 

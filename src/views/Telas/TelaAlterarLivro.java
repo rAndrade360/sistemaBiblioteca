@@ -6,9 +6,10 @@
 package views.Telas;
 
 import controllers.LivroController;
-import javax.swing.JOptionPane;
 import models.Livro;
-
+import java.awt.Image;
+import java.awt.Graphics;
+import javax.swing.ImageIcon;
 /**
  *
  * @author Victor
@@ -54,12 +55,17 @@ public class TelaAlterarLivro extends javax.swing.JInternalFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         btnAlterar = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
         btnBuscar = new javax.swing.JButton();
         spnCodigo = new javax.swing.JSpinner();
         txtAno = new javax.swing.JFormattedTextField();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        ImageIcon icon = new ImageIcon(getClass().getResource("/views/Imagens/mostralivro.jpg"));
+        Image image = icon.getImage();
+        jPanel2 = new javax.swing.JPanel(){
+            public void paintComponent(Graphics g){
+                g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+            }
+        };
 
         setClosable(true);
         setPreferredSize(new java.awt.Dimension(400, 450));
@@ -166,7 +172,7 @@ public class TelaAlterarLivro extends javax.swing.JInternalFrame {
 
         getContentPane().add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 364, 60));
 
-        jLabel13.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
         jLabel13.setText("Título:");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
@@ -177,23 +183,24 @@ public class TelaAlterarLivro extends javax.swing.JInternalFrame {
 
         getContentPane().add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 364, 55));
 
-        jLabel14.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
         jLabel14.setText("Autor(es):");
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
         txtEditora.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         getContentPane().add(txtEditora, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 364, -1));
 
-        jLabel15.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
         jLabel15.setText("Editora:");
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, -1));
 
-        jLabel16.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
         jLabel16.setText("Ano:");
         getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
 
         btnAlterar.setBackground(new java.awt.Color(255, 51, 51));
-        btnAlterar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnAlterar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        btnAlterar.setForeground(new java.awt.Color(255, 255, 255));
         btnAlterar.setText("Alterar");
         btnAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,48 +209,19 @@ public class TelaAlterarLivro extends javax.swing.JInternalFrame {
         });
         getContentPane().add(btnAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 90, -1));
 
-        jLabel18.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel18.setText("Código:");
-
-        btnBuscar.setBackground(new java.awt.Color(255, 51, 51));
-        btnBuscar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnBuscar.setBackground(new java.awt.Color(0, 153, 204));
+        btnBuscar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        btnBuscar.setForeground(new java.awt.Color(255, 255, 255));
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
 
         spnCodigo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel18)
-                    .addComponent(spnCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnBuscar)
-                .addGap(84, 84, 84))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(spnCodigo)
-                .addGap(10, 10, 10)
-                .addComponent(btnBuscar)
-                .addContainerGap())
-        );
-
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 250, 90));
+        getContentPane().add(spnCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 180, -1));
 
         try {
             txtAno.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
@@ -253,8 +231,22 @@ public class TelaAlterarLivro extends javax.swing.JInternalFrame {
         txtAno.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         getContentPane().add(txtAno, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 80, 20));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/background2 - 400x450.jpg"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -30, 400, 450));
+        jLabel18.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel18.setText("Código:");
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, -1, -1));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 430, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -306,9 +298,8 @@ private int codigo;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane7;

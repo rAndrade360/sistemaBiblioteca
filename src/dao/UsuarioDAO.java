@@ -40,6 +40,7 @@ public class UsuarioDAO {
             stmt.setString(6, usuario.getEmail());
             stmt.setLong(7, usuario.getCelular());
             stmt.setDate(8, Date.valueOf(usuario.getNascimento()));
+             System.out.println(Date.valueOf(usuario.getNascimento()));
             System.out.println("oi" + usuario.getCelular());
             stmt.execute();
             stmt.close();
@@ -80,11 +81,12 @@ public class UsuarioDAO {
         return users;     
     }
     
-    public Usuario show(String matricula){
+    public Usuario show(Usuario usuario){
         try {
-            String query = "SELECT * FROM usuarios WHERE matricula = ? LIMIT 1";
+            String query = "SELECT * FROM usuarios WHERE matricula = ? OR id = ? LIMIT 1";
             PreparedStatement stmt = connection.prepareCall(query);
-            stmt.setString(1, matricula);
+            stmt.setString(1, usuario.getMatricula());
+            stmt.setInt(2, usuario.getId());
             Usuario user;
             try (ResultSet result = stmt.executeQuery()) {
                 user = new Usuario();
@@ -121,6 +123,7 @@ public class UsuarioDAO {
             stmt.setString(6, usuario.getEmail());
             stmt.setLong(7, usuario.getCelular());
             stmt.setDate(8, Date.valueOf(usuario.getNascimento()));
+            System.out.println(Date.valueOf(usuario.getNascimento()));
             stmt.setLong(9, usuario.getId());
             stmt.execute();
             stmt.close();

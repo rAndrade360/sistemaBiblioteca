@@ -55,10 +55,11 @@ public class TelaInicialMDI extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
+        itemListar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tela principal | Sistema Biblioteca");
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -199,15 +200,6 @@ public class TelaInicialMDI extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem10);
 
-        jMenuItem11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/arrow_refresh.png"))); // NOI18N
-        jMenuItem11.setText("Renovar");
-        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem11ActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuItem11);
-
         jMenuItem12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/date.png"))); // NOI18N
         jMenuItem12.setText("Reservar");
         jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
@@ -216,6 +208,15 @@ public class TelaInicialMDI extends javax.swing.JFrame {
             }
         });
         jMenu3.add(jMenuItem12);
+
+        itemListar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/Imagens/page_white_text.png"))); // NOI18N
+        itemListar.setText("Listar Empréstimos");
+        itemListar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemListarActionPerformed(evt);
+            }
+        });
+        jMenu3.add(itemListar);
 
         jMenuBar1.add(jMenu3);
 
@@ -296,12 +297,6 @@ public class TelaInicialMDI extends javax.swing.JFrame {
         cad.setVisible(true);
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
-    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        TelaRenovarLivro cad = new TelaRenovarLivro();
-        jDesktopPane1.add(cad);
-        cad.setVisible(true);
-    }//GEN-LAST:event_jMenuItem11ActionPerformed
-
     private void itmListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmListarActionPerformed
         // TODO add your handling code here:
         TelaListaLivros tela = new TelaListaLivros();
@@ -315,6 +310,13 @@ public class TelaInicialMDI extends javax.swing.JFrame {
         jDesktopPane1.add(tela);
         tela.setVisible(true);
     }//GEN-LAST:event_itmListarUsuarioActionPerformed
+
+    private void itemListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListarActionPerformed
+                // TODO add your handling code here:
+        TelaListaEmprestimos tela = new TelaListaEmprestimos();
+        jDesktopPane1.add(tela);
+        tela.setVisible(true);
+    }//GEN-LAST:event_itemListarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -352,6 +354,7 @@ public class TelaInicialMDI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem itemListar;
     private javax.swing.JMenuItem itmListar;
     private javax.swing.JMenuItem itmListarUsuario;
     private javax.swing.JDesktopPane jDesktopPane1;
@@ -361,7 +364,6 @@ public class TelaInicialMDI extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
