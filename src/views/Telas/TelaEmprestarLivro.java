@@ -45,8 +45,8 @@ public class TelaEmprestarLivro extends javax.swing.JInternalFrame {
         };
         txtData = new javax.swing.JFormattedTextField();
         jLabel2 = new javax.swing.JLabel();
-        txtCodigo = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
+        txtCodigo = new javax.swing.JSpinner();
 
         setClosable(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -83,12 +83,12 @@ public class TelaEmprestarLivro extends javax.swing.JInternalFrame {
         jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setText("Devolução:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 110, -1));
-        jPanel1.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 248, -1));
 
         jLabel8.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(51, 51, 51));
         jLabel8.setText("Código:");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+        jPanel1.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 250, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 250));
 
@@ -98,7 +98,7 @@ public class TelaEmprestarLivro extends javax.swing.JInternalFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
        
          ServicosController servico = new ServicosController();
-        int codigo = Integer.parseInt(txtCodigo.getText());
+        int codigo = Integer.parseInt(txtCodigo.getValue().toString());
         String data = txtData.getText();
         String dataNasc[] = data.split("/");
         LocalDate date = LocalDate.of(Integer.parseInt(dataNasc[2]),Integer.parseInt(dataNasc[1]), Integer.parseInt(dataNasc[0]));
@@ -115,7 +115,7 @@ public class TelaEmprestarLivro extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtCodigo;
+    private javax.swing.JSpinner txtCodigo;
     private javax.swing.JFormattedTextField txtData;
     private javax.swing.JTextField txtMatricula;
     // End of variables declaration//GEN-END:variables

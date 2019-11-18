@@ -37,7 +37,6 @@ public class TelaReservarLivro extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         txtMatricula = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
-        txtCodigo = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         ImageIcon icon = new ImageIcon(getClass().getResource("/views/Imagens/servicos.jpg"));
         Image image = icon.getImage();
@@ -46,6 +45,7 @@ public class TelaReservarLivro extends javax.swing.JInternalFrame {
                 g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
             }
         };
+        txtCodigo = new javax.swing.JSpinner();
 
         setClosable(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -65,13 +65,14 @@ public class TelaReservarLivro extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, -1, -1));
-        getContentPane().add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 253, -1));
 
         jLabel10.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
         jLabel10.setText("Código:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 250, 30));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 200));
 
         pack();
@@ -79,7 +80,7 @@ public class TelaReservarLivro extends javax.swing.JInternalFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         ServicosController servico = new ServicosController();
-        int codigo = Integer.parseInt(txtCodigo.getText());
+        int codigo = Integer.parseInt(txtCodigo.getValue().toString());
         Usuario user = new Usuario();
         user.setMatricula(txtMatricula.getText());
         servico.reservar(codigo, user, LocalDate.now());
@@ -93,7 +94,7 @@ public class TelaReservarLivro extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtCodigo;
+    private javax.swing.JSpinner txtCodigo;
     private javax.swing.JTextField txtMatricula;
     // End of variables declaration//GEN-END:variables
 }

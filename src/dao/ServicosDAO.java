@@ -32,8 +32,8 @@ public class ServicosDAO {
         this.connection = Database.connect();
     }
     
-    public void emprestar(Emprestimo emprestimo) {
-         try {
+    public void emprestar(Emprestimo emprestimo) throws SQLException {
+         
              
              String query = "INSERT INTO emprestimos(usuario_id, livro_id, data_emprestimo, data_devolucao) VALUES(?, ?, ?, ?)";
              PreparedStatement stmt = this.connection.prepareStatement(query);
@@ -45,33 +45,27 @@ public class ServicosDAO {
              stmt.execute();
              stmt.close();
              
-         } catch (SQLException ex) {
-             Logger.getLogger(ServicosDAO.class.getName()).log(Level.SEVERE, null, ex);
-             JOptionPane.showMessageDialog(null, "Erro "+ ex);
-         }
+       
     }
     
-    public boolean buscar(Livro livro){
+    public boolean buscar(Livro livro) throws SQLException{
           
-         try {
+         
              String query = "SELECT * FROM emprestimos e WHERE (livro_id = ?) and (e.id NOT IN (SELECT emprestimo_id FROM devolucoes)) LIMIT 1";
              PreparedStatement stmt = this.connection.prepareStatement(query);
              stmt.setInt(1, livro.getId());
              ResultSet rs = stmt.executeQuery();
              boolean emp = rs.next();
              return emp;
-         } catch (SQLException ex) {
-             Logger.getLogger(ServicosDAO.class.getName()).log(Level.SEVERE, null, ex);
-             JOptionPane.showMessageDialog(null, "Erro "+ ex);
-         }
-        return false;
+         
+
     }
    
    
     
-     public Emprestimo buscarEmprestimo(Livro livro){
+     public Emprestimo buscarEmprestimo(Livro livro) throws SQLException{
           Emprestimo emp = new Emprestimo();
-         try {
+         
              String query = "SELECT * FROM emprestimos e WHERE (livro_id = ?) and (e.id NOT IN (SELECT emprestimo_id FROM devolucoes)) LIMIT 1";
              PreparedStatement stmt = this.connection.prepareStatement(query);
              stmt.setInt(1, livro.getId());
@@ -80,16 +74,13 @@ public class ServicosDAO {
                    emp.setId(rs.getInt("id"));
              }
              return emp;
-         } catch (SQLException ex) {
-             Logger.getLogger(ServicosDAO.class.getName()).log(Level.SEVERE, null, ex);
-             JOptionPane.showMessageDialog(null, "Erro "+ ex);
-         }
-        return emp;
+         
+       
     }
    
-     public List<Emprestimo> listaEmprestimos(){
+     public List<Emprestimo> listaEmprestimos() throws SQLException{
          List<Emprestimo> lista = new ArrayList<Emprestimo>();
-         try {
+         
              String query = "SELECT * FROM emprestimos e WHERE e.id NOT IN (SELECT emprestimo_id FROM devolucoes)";
              PreparedStatement stmt = this.connection.prepareStatement(query);
              ResultSet rs = stmt.executeQuery();
@@ -107,10 +98,7 @@ public class ServicosDAO {
                   lista.add(emp);
              }
              
-         } catch (SQLException ex) {
-             Logger.getLogger(ServicosDAO.class.getName()).log(Level.SEVERE, null, ex);
-             JOptionPane.showMessageDialog(null, "Erro "+ ex);
-         }
+         
         return lista;
      }
    

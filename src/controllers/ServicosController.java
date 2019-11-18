@@ -2,6 +2,7 @@
 package controllers;
 
 import dao.ServicosDAO;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +50,8 @@ public class ServicosController {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ServicosController.class.getName()).log(Level.SEVERE, null, ex);
              JOptionPane.showMessageDialog(null, "Não foi possível realizar a operação!");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Não foi possível realizar a operação!");
         }
         
     }
@@ -78,12 +81,15 @@ public class ServicosController {
                 emp.setLivro(livro);
                 emp.setUsuario(usuario);
                  servicos.devolver(emp);
-
+                 
+                  JOptionPane.showMessageDialog(null, "Livro devolvido com sucesso!");
             }else{
-                             JOptionPane.showMessageDialog(null, "O registro do empréstimo não existe!");
+               JOptionPane.showMessageDialog(null, "O registro do empréstimo não existe!");
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ServicosController.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Erro de Conexão!");
+        } catch (SQLException ex) {
+           JOptionPane.showMessageDialog(null, "Não foi possível realizar a operação!");
         }
             
     }
@@ -106,9 +112,9 @@ public class ServicosController {
             boolean notdevolvido = servicos.buscar(livro);
             
             if(!notdevolvido){
-                JOptionPane.showMessageDialog(null, "O livro está disponível na biblioteca");
+                JOptionPane.showMessageDialog(null, "Não foi possível reservar porque o livro está disponível na biblioteca");
             }else if(servicos.isReserved(livro)){
-                JOptionPane.showMessageDialog(null, "O livro já está reservado!");   
+                JOptionPane.showMessageDialog(null, "Não foi possível reservar porque o livro já está reservado!");   
             }else{
                 Reserva reserva = new Reserva();
                 reserva.setUsuario(usuario);
@@ -118,7 +124,9 @@ public class ServicosController {
                     JOptionPane.showMessageDialog(null, "Livro reservado com sucesso!");   
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ServicosController.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Erro de Conexão!");
+        } catch (SQLException ex) {
+           JOptionPane.showMessageDialog(null, "Não foi possível realizar a operação!");
         }
     }
  
@@ -144,7 +152,9 @@ public class ServicosController {
             }
            return novaLista;
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ServicosController.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Erro de Conexão!");
+        } catch (SQLException ex) {
+           JOptionPane.showMessageDialog(null, "Não foi possível realizar a operação!");
         }
         
         return null;
